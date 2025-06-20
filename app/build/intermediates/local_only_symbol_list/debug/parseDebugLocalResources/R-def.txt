@@ -6,6 +6,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 id button_count
 id button_toast
+id button_zero
 id main
 id text_display_count
 layout activity_main
@@ -15,6 +16,7 @@ string app_name
 string count
 string count_value
 string toast
+string zero
 style Base.Theme.HelloToast
 style Theme.HelloToast
 xml backup_rules
