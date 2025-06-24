@@ -16,7 +16,9 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.hellotoast.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-    private int count = 0; //Variable that has an initial value of zero.
+
+    //Variable that has an initial value of zero.
+    private int count = 0;
 
     public static ActivityMainBinding mainBinding;
 
@@ -26,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        mainBinding = ActivityMainBinding.inflate(getLayoutInflater()); //mainBinding to reach all views.
+        //mainBinding to reach all views.
+        mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
 //      setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -38,26 +41,35 @@ public class MainActivity extends AppCompatActivity {
 //        textDisplayCount = findViewById(R.id.text_display_count);
     }
     public void showToast(View view) {
-        Toast.makeText(this, "Hello Toast", Toast.LENGTH_SHORT).show(); //When clicking button_toast show the text "Hello Toast" for a short time.
+        //When clicking button_toast show the text "Hello Toast" for a short time.
+        Toast.makeText(this, "Hello Toast", Toast.LENGTH_SHORT).show();
     }
 
     public void showZero(View view) {
-        count = 0; //Reset count.
-        mainBinding.textDisplayCount.setText(String.valueOf(count)); //Show the count text.
-        mainBinding.buttonZero.setBackgroundColor(ContextCompat.getColor(this, R.color.gray)); //Reset the button_zero color to gray.
+        //Reset count.
+        count = 0;
+        //Show the count text.
+        mainBinding.textDisplayCount.setText(String.valueOf(count));
+        //Reset the button_zero color to gray.
+        mainBinding.buttonZero.setBackgroundColor(ContextCompat.getColor(this, R.color.gray));
     }
 
     public void showCount(View view) {
-        count++; //Increase count by one when clicking on button_count.
-        mainBinding.textDisplayCount.setText(String.valueOf(count)); //Show the count text.
+        //Increase count by one when clicking on button_count.
+        count++;
+        //Show the count text.
+        mainBinding.textDisplayCount.setText(String.valueOf(count));
 
         if (count % 2 == 0) {
-            mainBinding.buttonCount.setBackgroundColor(ContextCompat.getColor(this, R.color.blue)); //If count is even change the button_count color to blue.
+            //If count is even change the button_count color to blue.
+            mainBinding.buttonCount.setBackgroundColor(ContextCompat.getColor(this, R.color.blue));
         }
         else {
-            mainBinding.buttonCount.setBackgroundColor(ContextCompat.getColor(this, R.color.green)); //If count is odd change the button_count color to green.
+            //If count is odd change the button_count color to green.
+            mainBinding.buttonCount.setBackgroundColor(ContextCompat.getColor(this, R.color.green));
         }
 
-        mainBinding.buttonZero.setBackgroundColor(ContextCompat.getColor(this, R.color.orange)); //When clicking on button_count on the first click change the button_zero to orange
+        //When clicking on button_count on the first click change the button_zero to orange.
+        mainBinding.buttonZero.setBackgroundColor(ContextCompat.getColor(this, R.color.orange));
     }
 }
