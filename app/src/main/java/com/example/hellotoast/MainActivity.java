@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showZero(View view) {
-        //Reset count.
+        //Reset count variable.
         count = 0;
         //Show the count text.
         mainBinding.textDisplayCount.setText(String.valueOf(count));
